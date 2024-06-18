@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'codeqr/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'codeqr/css/style.css' %}">
+    <title>QR CODE Generator</title>
+</head>
+<body>
+    <section class="container mt-5 shadow d-flex" id="contact">
+        <div class="col-md-8 p-5 contactF">
+            <h2 class="title">GENERATEUR QRCODE</h2>
+            <form class="row g-3 contactForm mt-4 shadow p-5" method="post">
+                {% csrf_token %}
+                <div class="col-md-6">
+                  <label for="data" class="form-label">Données</label>
+                  <input type="text" class="form-control" id="data" name="data" placeholder="saisir les données que vous souhaitez generer" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="couleur" class="form-label">Couleur</label>
+                    <input type="text" class="form-control" id="couleur" name="couleur" placeholder="blue ou black" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="nom du qrcode generer" required>
+                </div>
+                <div class="col-12 ">
+                  <button type="submit" class="btn btn-secondary mt-3 shadow">Generer</button>
+                  <button type="reset" class="btn btn-secondary mt-3 shadow">Nouveau</button>
+                </div>
+              </form>
+        </div>
+        <div class="col-md-4 mt-4 mb-4 shadow p-5 qrcode">
+            <h2 class="title">QRCODE Generé</h2>
+            {% if qr_code_url %}
+                <img src="{{ qr_code_url }}" alt="" class=" mx-auto d-block">
+                <a class="telecharger btn btn-primary mx-auto d-block mt-4 shadow" href="{{ qr_code_url  }}" download>Download</a>
+            {% endif %}
+        </div>
+    </section>
+    <script script="{% static 'codeqr/js/bootstrap.bundle.min.js' %}">
+<body>
+</html>

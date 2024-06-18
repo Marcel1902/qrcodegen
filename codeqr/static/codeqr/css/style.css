@@ -1,0 +1,90 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+    background: linear-gradient(to left, rgba(4, 106, 196, 0.5), rgba(29, 14, 161, 0.5));
+}
+
+#contact{
+    background: linear-gradient(to left, rgba(4, 106, 196, 0.4), rgba(29, 14, 161, 0.6));
+    border-radius: 10px;
+}
+
+.contactForm{
+    border: none;
+    border-radius: 10px;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold;
+}
+
+label{
+    text-align: center;
+    font-weight: bold
+}
+img{
+    width: 250px;
+    height: 250px;
+}
+
+img button{
+    font-weight: bold;
+}
+
+.btn{
+    background-color: rgb(0, 0, 0, .5);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.telecharger{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 990px){
+    img{
+        width: 150px;
+        height: 150px;
+    }
+
+}
+
+@media screen and (max-width: 770px){
+    #contact{
+        display: flex;
+        flex-direction: column;
+    }
+    .contactF{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .qrcode{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #contact{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .contactF{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
